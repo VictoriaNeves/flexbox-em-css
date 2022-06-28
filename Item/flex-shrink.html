@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - flex-shrink</title>
+    <style>
+        .flex-container {
+            display: flex;
+            border: 1px solid black;
+            max-width: 350px;
+            margin-bottom:10px ;
+        }
+
+        .item {
+            background-color: orangered;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .flex-shrink1 {
+            flex-shrink: 1;
+        }
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+
+        .flex-shrink0 {
+            flex-shrink: 0;
+            flex-basis:200px;
+            /* quando o tamanho dos itens é maior que o tamanho do container, os itens vazam. */
+        }
+
+        .flex-shrink2 {
+            flex-shrink: 2;
+            /* flex-basis:200px; */
+            flex-basis: 100px;
+
+        }
+
+        .flex-shrink3 {
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Flex-shrink:1</h1>
+    <div class="flex-container">
+        <div class="item flex-shrink1 flex-grow ">A</div>
+        <div class="item flex-shrink1 flex-grow ">B</div>
+        <div class="item flex-shrink1 flex-grow ">C</div>
+        <div class="item flex-shrink1 flex-grow ">D</div>
+        <div class="item flex-shrink1 flex-grow ">E</div>
+    </div>
+
+    <div class="flex-container">
+        <div class="item flex-shrink1 flex-grow ">A</div>
+        <div class="item flex-shrink1 flex-grow ">The generated Lorem Ipsum</div>
+        <div class="item flex-shrink1 flex-grow ">C</div>
+        <div class="item flex-shrink1 flex-grow ">D</div>
+    </div>
+
+    <h1>Flex-shrink:0 / basis:200px</h1>
+    <div class="flex-container">
+        <div class="item flex-shrink0 flex-grow ">A</div>
+        <div class="item flex-shrink0 flex-grow ">The generated </div>
+        <div class="item flex-shrink0 flex-grow ">C generated</div>
+        <div class="item flex-shrink0 flex-grow ">D</div>
+    </div>
+
+    <h1>Flex-shrink: mix / basis:100px</h1>
+    <div class="flex-container">
+        <div class="item flex-shrink1 flex-grow ">A</div>
+        <div class="item flex-shrink2 flex-grow ">The generated</div>
+        <div class="item flex-shrink2 flex-grow ">C</div>
+        <div class="item flex-shrink3 flex-grow ">D</div>
+    </div>
+</body>
+</html>
